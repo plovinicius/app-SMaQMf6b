@@ -6,13 +6,16 @@ use App\Actions\Product\ProductCreateAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductStoreRequest;
 use App\Http\Resources\ProductResource;
+use App\Models\Product;
 use Exception;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        dd('index');
+        $products = Product::paginate(config('utils.per_page'));
+
+        return ProductResource::collection($products);
     }
 
     /**
