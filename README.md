@@ -7,6 +7,7 @@
 - Clonar o repositório
 - Instalar dependencias ```composer install```
 - Fazer o build e subir o docker ```./vendor/bin/sail up```
+- Rodar migrations ```./vendor/bin/sail php artisan migrate```
 - A Url padrão do sail é http://localhost
 
 ## Rotas da API
