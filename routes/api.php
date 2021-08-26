@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,6 @@ Route::name('api.')->group(function() {
         Route::post('/', [ProductController::class, 'store'])->name('store');
         Route::patch('/{product}/edit', [ProductController::class, 'update'])->name('update');
     });
+
+    Route::get('/history', [HistoryController::class, 'index'])->name('history.index');
 });
